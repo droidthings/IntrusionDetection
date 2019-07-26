@@ -47,6 +47,14 @@ The first approach via MQTT broker has been the primary focus of this project.
 
 #### 3.3 Node-RED
 
+Node-RED in light-weight programming tool built on Node.js for wiring the hardware components together as nodes, APIs and online service in a new and interesting way. It provides a browser-based flow editor that makes it easy to wire together flows using the wide range of nodes in the palette. This makes it ideal to run at the edge of the network on low-cost hardware such as the Raspberry Pi as well as in the cloud.The flows created in Node-RED are stored using JSON which can be easily imported and exported for sharing with others. An online flow library allows you to share your best flows with the world.
+
+
+
+
+
+
+
 ----
 
 
