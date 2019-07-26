@@ -29,7 +29,7 @@ This Github page contains the documentation and codebase of the project "Intrusi
 The Compact I2C devices like Gyroscope Sensor can easily help you out in the axial monitoring system which detects the parameters and shares it to the user through MQTT and can monitored on [Grafana] or can be controlled via mobile devices. This motion tracking system can also help to detect intrusions at a personal house or any commercial building with proper implementaion. This project is prototype of such system where the data is visualised on [Grafana]. In addition the project also has an Andorid application which notifies the user in case of any intrusion.
 
 #### 2. Architecture overview
-[Arc1]
+![Arc1]
 The current application has two parts implementation
   1. Publish the sensor readings and subscribe for the values via [MQTT] broker on [Node-RED]. Join all the sensor data and insert it         into [InfluxDB] which is a time series database and finally we query the data on [Grafana] for monitoring and visualising.
   2. Post the sensor data to [ThingSpeak] portal which in turn will give an REST api. This api can be configured in Android. Based on        the 3-Axis accelerometer the user will recceive the notification in case of any intrusion detection.
@@ -56,7 +56,7 @@ The first approach via MQTT broker has been the primary focus of this project.
    [AngularJS]: <http://angularjs.org>
    [Gulp]: <http://gulpjs.com>
    
-   [Arc1]: <(https://user-images.githubusercontent.com/10976047/61985061-ad48cd80-b007-11e9-8ae3-2bebc030208a.PNG>
+   [Arc1]: <https://user-images.githubusercontent.com/10976047/61985061-ad48cd80-b007-11e9-8ae3-2bebc030208a.PNG>
    [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
    [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
    [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
