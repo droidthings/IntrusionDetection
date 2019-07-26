@@ -56,7 +56,7 @@ The first approach via MQTT broker has been the primary focus of this project.
    [AngularJS]: <http://angularjs.org>
    [Gulp]: <http://gulpjs.com>
    
-   [Arc1]: <https://user-images.githubusercontent.com/10976047/61985061-ad48cd80-b007-11e9-8ae3-2bebc030208a.PNG>
+   [Arc1]: <https://user-images.githubusercontent.com/10976047/61985260-b4bca680-b008-11e9-9504-4bce37d6da4f.PNG>
    [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
    [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
    [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
