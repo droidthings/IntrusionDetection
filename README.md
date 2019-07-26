@@ -19,6 +19,7 @@ This Github page contains the documentation and codebase of the project "Intrusi
   * [3.2 Accelerometer and Gyroscope sensors](#32-accelerometer-and-gyroscope-sensors)
   * [3.3 Node-RED](#33-node-red) 
   * [3.4 MQTT](#34-mqtt)
+        * [3.4.1](#341-installation)
   * [3.5 InfluxDB](#35-influxdb)
   * [3.6 Grafana](#36-grafana)
 - [4. Methodology](#4-methodology)
@@ -51,6 +52,16 @@ Node-RED in light-weight programming tool built on Node.js for wiring the hardwa
 
 The complete installation guide, instruction sets, different types of nodes used and the wiring mechanism can be found [here](/Documentation/Node-RED.md) in detail.
 
+#### 3.4 MQTT
+
+MQTT is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol [MQTT]. It stands for MQ Telemetry Transport but previously was known as Message Queuing Telemetry Transport. It's a lightweight publish/subscribe messaging protocol designed for M2M (machine to machine) telemetry in low bandwidth environments.MQTT is fast becoming one of the main protocols for IOT (internet of things) deployments. See [MQTT vs HTTP] for the comparison of performances.
+
+##### 3.4.1 Installaion
+
+Download the suitable MQTT broker from [MOSQUITTO] and install it on your PC/Laptop.
+
+Once installation is done navigate to > C:\Program Files\mosquitto or wherever the broker is installed and run > mosquitto.exe
+
 
 
 
@@ -70,8 +81,8 @@ The complete installation guide, instruction sets, different types of nodes used
    [ESP32]: <http://esp32.net/>
    [MQTT]: <http://mqtt.org/>
    [Node-RED]: <https://nodered.org/>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [jQuery]: <http://jquery.com>
+   [MQTT vs HTTP]: <https://medium.com/mqtt-buddy/mqtt-vs-http-which-one-is-the-best-for-iot-c868169b3105>
+   [MOSQUITTO]: <https://mosquitto.org/download/>
    [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
    [express]: <http://expressjs.com>
    [AngularJS]: <http://angularjs.org>
