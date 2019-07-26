@@ -62,7 +62,37 @@ Download the suitable MQTT broker from [MOSQUITTO] and install it on your PC/Lap
 
 Once installation is done navigate to _C:\Program Files\mosquitto_(_on windows_) or wherever the broker is installed and run _mosquitto.exe_
 
+By default the mosquitto broker runs on port **1883**, but it can be modified inside _C:\Program Files\mosquitto\mosquitto.conf_
 
+You can now connect to the broker using your machine's IP along with post number , 
+```
+#include <WiFi.h>
+#include <PubSubClient.h>
+WiFiClient espClient;
+PubSubClient client(espClient);
+
+//Ip address of your machine
+const char* mqtt_server = "192.168.0.38";
+
+void setup() {
+ .
+ .
+    setup_wifi();
+    client.setServer(mqtt_server, 1883);
+ .
+ .
+}
+
+void loop() {
+ .
+ .  
+    client.publish("esp32/XAcc", String(ax).c_str(), true);
+    client.publish("esp32/YAcc", String(ax).c_str(), true);
+    client.publish("esp32/XGyr", String(ax).c_str(), true);
+ .
+ .
+```
+Complete code can be found [here](/Code/ESP32-MPU6050). Once you run the program on your board you will be able to subscribe to above mentioned sensor readings in the code snippet.
 
 
 
