@@ -60,7 +60,7 @@ MQTT is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol [M
 
 Download the suitable MQTT broker from [MOSQUITTO] and install it on your PC/Laptop.
 
-Once installation is done navigate to > C:\Program Files\mosquitto or wherever the broker is installed and run > mosquitto.exe
+Once installation is done navigate to _C:\Program Files\mosquitto_(_on windows_) or wherever the broker is installed and run _mosquitto.exe_
 
 
 
