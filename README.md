@@ -4,7 +4,7 @@ MPU6050 MQTT based intrusion detection system
 
 This Github page contains the documentation and codebase of the project "Intrusion detection with MQTT and  Grafana Monitoring". The project is an effort of the students Abhilash Malleshappa Bhajantri (26119) and Vineeth Vijaykumar Chitragi (26213) in the study course Real Time Embedded System 2018-19 at Hochschule Rhein-Waal.The application involves
 
-  - Develop a prototype sensor system which can publish/send the accelerationa and   gyroscope 3 axial data.
+  - Develop a prototype sensor system which can publish/send the acceleration and gyroscope 3 axial data.
   - Subscribe for the data the store it in InfluxDB
   - Post the data to [ThingSpeak] Network 
   - Monitor the 3 axial data on [Grafana]
