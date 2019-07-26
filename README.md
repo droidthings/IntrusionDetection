@@ -11,7 +11,7 @@ This Github page contains the documentation and codebase of the project "Intrusi
   
  ___
 
-1. [Introduction](#Introduction)
+1. [Introduction](#1-introduction)
 2. [Architecture overview](#2-architecture-overview)
 2. [Technology review](#Technology-Review)
     - [Accelerometer and Gyroscope sensors](#Accelerometer-And-Gyroscope-Sensors)
@@ -28,6 +28,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ### 2. Architeccture Overview
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 ----
 
 
