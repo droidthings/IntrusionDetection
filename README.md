@@ -14,7 +14,7 @@ This Github page contains the documentation and codebase of the project "Intrusi
 
 - [1. Introduction](#1-introduction)
 - [2. Architecture overview](#2-architecture-overview)
-- [3.Technology review](#3-technology-review)
+- [3. Technology review](#3-technology-review)
   * [3.1 ESP32](#31-esp32)
   * [3.2 Accelerometer and Gyroscope sensors](#32-accelerometer-and-gyroscope-sensors)
   * [3.3 Node-RED](#33-node-red) 
@@ -35,6 +35,8 @@ The current application has two parts implementation
   2. Post the sensor data to [ThingSpeak] portal which in turn will give an REST api. This api can be configured in Android. Based on        the 3-Axis accelerometer the user will recceive the notification in case of any intrusion detection.
 
 The first approach via MQTT broker has been the primary focus of this project.
+
+#### 3. Technology review
 
 ----
 
