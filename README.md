@@ -51,7 +51,7 @@ The first approach via MQTT broker has been the primary focus of this project.
    [Grafana]: https://grafana.com/
    [InfluxDB]: <https://www.influxdata.com/>
    [MPU6050]: <https://www.invensense.com/products/motion-tracking/6-axis/mpu-6050/>
-   [ESP32]: <https://www.espressif.com/en/products/hardware/esp32/overview>
+   [ESP32]: <http://esp32.net/>
    [MQTT]: <http://mqtt.org/>
    [Node-RED]: <https://nodered.org/>
    [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
