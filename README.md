@@ -11,18 +11,23 @@ This Github page contains the documentation and codebase of the project "Intrusi
   
  ___
 
-# New Features!
+1.  [Introduction](#Introduction)
+2.  [Architecture overview](#Architeccture-Overview)
+2. [Technology review](#Technology-Review)
+    - [Accelerometer and Gyroscope sensors](#Accelerometer-And-Gyroscope-Sensors)
+    - [ESP32](#ESP32)
+    - [Node-RED](#Node-Red) 
+    - [MQTT](#MQTT)
+    - [InfluxDB](#InfluxDB)
+    - [Grafana](#Grafana)
+3. [Methodology](#Methodology)
+4. [Conclusion](#Conclusion)
 
-## Title
+## 1. Introduction
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-### Place 1
-
-Hello, this is some text to fill in this, [here](#place-2), is a link to the second place.
-
-### Place 2
-
-Place one has the fun times of linking here, but I can also link back [here](#place-1).
-
+## 2. Architeccture Overview
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ----
 
 
