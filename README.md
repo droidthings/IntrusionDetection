@@ -30,9 +30,10 @@ The Compact I2C devices like Gyroscope Sensor can easily help you out in the axi
 
 #### 2. Architecture overview
 The current application has two parts implementation
-  * Publish the sensor readinga and subscribe for the values via [MQTT] broker on [Node-RED]. Join all the sensor data and insert it         into [InfluxDB] which is our time series database and finally we query the data on [Grafana] for monitoring and visulaising.
-  * Post the sensor data to [ThingSpeak] portal which in turn will give an REST api. This api can be configured in Android. Based on the
-    3-Axis accelerometer the user will recceive the notification in case of any intrusion detection.
+  1. Publish the sensor readings and subscribe for the values via [MQTT] broker on [Node-RED]. Join all the sensor data and insert it         into [InfluxDB] which is a time series database and finally we query the data on [Grafana] for monitoring and visualising.
+  2. Post the sensor data to [ThingSpeak] portal which in turn will give an REST api. This api can be configured in Android. Based on        the 3-Axis accelerometer the user will recceive the notification in case of any intrusion detection.
+
+The first approach via MQTT broker has been the primary focus of this project.
 
 ----
 
