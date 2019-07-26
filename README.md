@@ -41,6 +41,12 @@ The first approach via MQTT broker has been the primary focus of this project.
 
 #### 3.1 ESP32
 
+
+#### 3.2 Accelerometer and Gyroscope sensors
+
+
+#### 3.3 Node-RED
+
 ----
 
 
