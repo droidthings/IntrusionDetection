@@ -8,6 +8,8 @@ This Github page contains the documentation and codebase of the project "Intrusi
   - Subscribe for the data the store it in InfluxDB
   - Post the data to [ThingSpeak] Network 
   - Monitor the 3 axial data on [Grafana]
+  
+ ___
 
 # New Features!
 
