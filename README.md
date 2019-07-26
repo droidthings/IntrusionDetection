@@ -11,8 +11,8 @@ This Github page contains the documentation and codebase of the project "Intrusi
   
  ___
 
-1.  [Introduction](#Introduction)
-2.  [Architecture overview](#architecture-overview-2)
+1. [Introduction](#Introduction)
+2. [Architecture overview](#2-architecture-overview)
 2. [Technology review](#Technology-Review)
     - [Accelerometer and Gyroscope sensors](#Accelerometer-And-Gyroscope-Sensors)
     - [ESP32](#ESP32)
