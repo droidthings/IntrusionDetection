@@ -4,10 +4,10 @@ MPU6050 MQTT based intrusion detection system
 
 This Github page contains the documentation and codebase of the project "Intrusion detection with MQTT and Grafana Monitoring". The project is an effort of the students Abhilash Malleshappa Bhajantri (26119) and Vineeth Vijaykumar Chitragi (26213) in the study course Real Time Embedded System 2018-19 at Hochschule Rhein-Waal. The application involves
 
-  - Develop a prototype sensor system with [ESP32] and [MPU6050] which can publish/send the acceleration and gyroscope 3 axial data.
+  - Develop a prototype sensor system with [ESP32] and [MPU6050] which can publish/send the acceleration and gyroscope 6 axial data.
   - Subscribe for the data the store it in [InfluxDB]
   - Post the data to [ThingSpeak] Portal 
-  - Monitor the 3 axial data on [Grafana]
+  - Monitor the 6 axial (3-axis gyroscope and a 3-axis accelerometer) data on [Grafana]
   
  ___
 
@@ -29,7 +29,10 @@ This Github page contains the documentation and codebase of the project "Intrusi
 The Compact I2C devices like Gyroscope Sensor can easily help you out in the axial monitoring system which detects the parameters and shares it to the user through MQTT and can monitored on [Grafana] or can be controlled via mobile devices. This motion tracking system can also help to detect intrusions at a personal house or any commercial building with proper implementaion. This project is prototype of such system where the data is visualised on [Grafana]. In addition the project also has an Andorid application which notifies the user in case of any intrusion.
 
 #### 2. Architecture overview
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The current application has two parts implementation
+  * Publish the sensor readinga and subscribe for the values via [MQTT] broker on [Node-RED]. Join all the sensor data and insert it         into [InfluxDB] which is our time series database and finally we query the data on [Grafana] for monitoring and visulaising.
+  * Post the sensor data to [ThingSpeak] portal which in turn will give an REST api. This api can be configured in Android. Based on the
+    3-Axis accelerometer the user will recceive the notification in case of any intrusion detection.
 
 ----
 
@@ -42,8 +45,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
    [InfluxDB]: <https://www.influxdata.com/>
    [MPU6050]: <https://www.invensense.com/products/motion-tracking/6-axis/mpu-6050/>
    [ESP32]: <https://www.espressif.com/en/products/hardware/esp32/overview>
-   [Ace Editor]: <http://ace.ajax.org>
-   [node.js]: <http://nodejs.org>
+   [MQTT]: <http://mqtt.org/>
+   [Node-RED]: <https://nodered.org/>
    [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
    [jQuery]: <http://jquery.com>
    [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
