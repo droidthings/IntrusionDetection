@@ -13,50 +13,23 @@ This Github page contains the documentation and codebase of the project "Intrusi
 
 
 - [1. Introduction](#1-introduction)
-  * [1.1 Problem Statement](#11-problem-statement)
-  * [1.2 Overview](#12-overview)
-- [2. Technology Review](#2-technology-review)
-  * [2.1 LPWAN](#21-lpwan)
-  * [2.2 LoRa](#22-lora)
-  * [2.3 LoRaWan](#23-lorawan)
-  * [2.4 Time-of-Flight Sensors](#24-time-of-flight-sensors)
-- [3. Requirements Gathering](#3-requirements-gathering)
+- [2. Architecture overview](#2-architecture-overview)
+- [3.Technology review](#3-technology-review)
+  * [3.1 ESP32](#31-esp32)
+  * [3.2 Accelerometer and Gyroscope sensors](#32-accelerometer-and-gyroscope-sensors)
+  * [3.3 Node-RED](#33-node-red) 
+  * [3.4 MQTT](#34-mqtt)
+  * [3.5 InfluxDB](#35-influxdb)
+  * [3.6 Grafana](#36-grafana)
 - [4. Methodology](#4-methodology)
-- [5. Conclusion](#6-conclusion)
+- [5. Conclusion](#5-conclusion)
 
 ### 1. Introduction
 
-Waste is one of the burden issues throughout the world which consequently impacts the environment and to some extent also poses an adverse effect on human health. Waste management is a challenging task to carry out which consists of collection, transport, treatment, and proper disposal and these tasks are followed one after the other in a structural manner for the proper waste management.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-  
-
-In the near future, concept of the smart cities will integrate with technology, that will have connectivity and communication to transmit data. Consequently which helps in the process of waste management such as optimising the routes that waste collector vehicles follow for waste collection and removal, together with automating operations with sensors on waste bins signalling that collection is needed when the bins are full. The data from the sensor can transmit information in real-time to a control information system which facilite with Internet of things. Then that redirect route for the collection to the driver and bins to empty. And along with traffic situations and estimated time for collection. After the bins are collected, then information of the waste types can be analysed to determine for the identification of the waste, for example, which bins need to redirect to recycling centres or to disposal centres. So, that will automate the overall process of waste management[1].
-
-  
-
-With the integration with [ ENNI ](https://www.enni.de/), who takes responsibility for the waste management of the Moers city. For the concern on a collection of waste around 11000 waste bins are situated through the Moers city. As from their information, there is a lot of effort and time consuming to identify and collect the waste.
-
-  
-  
-#### 1.1 Problem Statement
-
-  
-
-On regarding of collection of waste, quite difficult to identify the waste bins are full or not. All the waste bin is not possible to full at the same time and there is the possibility of a single waste bin is full in a wide area where multiple waste bins are located. Along with that some area waste bin full in a shorter period of time while some area waste bin full in a longer period of time. So that requires more time and effort for the waste collector to empty the waste bin.
-
-  
-  
-  
-
-#### 1.2 Overview
-
-  
-
-Waste Bin integrated with a sensor which measures the height of the waste bin that helps to identify whether the waste is full or not. And along with that find the shortest path for the waste collector to empty the waste bin. So, that reduces time and effort for waster collector to drive through and collect the waste.
-
-  
-
-Initiation of the project with a selection of the appropriate sensor. Among the different sensor, on the basis of portability and accuracy, we select VL53L0X sensor. Consequently, needs a microcontroller board, on that behalf, ESP32 with Lora board is selected and so that makes possible wireless transmission of data from the sensor to the Internet. For receiving the data from Lora WLAN, The Things Network (TTN) is configured in such that established connection with the microcontroller. And the with integration with MQTT, that helps to extract the data from TTN to Database. So that subsequently Postgres Database is configured in such a way that able to store data from sensors. For the case of visualization, GeoServer helps to display with location a waste bins along with latitude and longitude, And having the capability of indication of waste present in the waste bin.
+#### 2. Architecture overview
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ----
 
