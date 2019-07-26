@@ -36,7 +36,8 @@ The current application has two parts implementation
 
 The first approach via MQTT broker has been the primary focus of this project.
 
-#### 3. Technology review
+### 3. Technology Review
+
 
 #### 3.1 ESP32
 
