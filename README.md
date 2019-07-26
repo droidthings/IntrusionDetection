@@ -56,7 +56,7 @@ The complete installation guide, instruction sets, different types of nodes used
 
 MQTT is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol [MQTT]. It stands for MQ Telemetry Transport but previously was known as Message Queuing Telemetry Transport. It's a lightweight publish/subscribe messaging protocol designed for M2M (machine to machine) telemetry in low bandwidth environments.MQTT is fast becoming one of the main protocols for IOT (internet of things) deployments. See [MQTT vs HTTP] for the comparison of performances.
 
-##### 3.4.1 Installaion
+#### 3.4.1 Installaion
 
 Download the suitable MQTT broker from [MOSQUITTO] and install it on your PC/Laptop.
 
