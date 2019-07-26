@@ -1,0 +1,179 @@
+[
+    {
+        "id": "c25876d4.ce1fc8",
+        "type": "mqtt in",
+        "z": "ba7c6c83.2251f",
+        "name": "Acc_X",
+        "topic": "esp32/XAcc",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "9ce35c9b.4536e",
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "7807f0c5.675a8"
+            ]
+        ]
+    },
+    {
+        "id": "bbd8f925.e07018",
+        "type": "mqtt in",
+        "z": "ba7c6c83.2251f",
+        "name": "Acc_Y",
+        "topic": "esp32/YAcc",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "9ce35c9b.4536e",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "7807f0c5.675a8"
+            ]
+        ]
+    },
+    {
+        "id": "2126c6f5.54891a",
+        "type": "mqtt in",
+        "z": "ba7c6c83.2251f",
+        "name": "Acc_Z",
+        "topic": "esp32/ZAcc",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "9ce35c9b.4536e",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "7807f0c5.675a8"
+            ]
+        ]
+    },
+    {
+        "id": "5f5a8067.83228",
+        "type": "mqtt in",
+        "z": "ba7c6c83.2251f",
+        "name": "Gyro_X",
+        "topic": "esp32/XGyro",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "9ce35c9b.4536e",
+        "x": 130,
+        "y": 300,
+        "wires": [
+            [
+                "7807f0c5.675a8"
+            ]
+        ]
+    },
+    {
+        "id": "f69eac01.e78cd",
+        "type": "mqtt in",
+        "z": "ba7c6c83.2251f",
+        "name": "Gyro_Y",
+        "topic": "esp32/YGyro",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "9ce35c9b.4536e",
+        "x": 130,
+        "y": 380,
+        "wires": [
+            [
+                "7807f0c5.675a8"
+            ]
+        ]
+    },
+    {
+        "id": "184ce45e.7213ec",
+        "type": "mqtt in",
+        "z": "ba7c6c83.2251f",
+        "name": "Gyro_Z",
+        "topic": "esp32/ZGyro",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "9ce35c9b.4536e",
+        "x": 110,
+        "y": 440,
+        "wires": [
+            [
+                "7807f0c5.675a8"
+            ]
+        ]
+    },
+    {
+        "id": "7807f0c5.675a8",
+        "type": "join",
+        "z": "ba7c6c83.2251f",
+        "name": "Join Sensor Data",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "6",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 410,
+        "y": 240,
+        "wires": [
+            [
+                "ae677d0.256668"
+            ]
+        ]
+    },
+    {
+        "id": "ae677d0.256668",
+        "type": "influxdb out",
+        "z": "ba7c6c83.2251f",
+        "influxdb": "85eca9c0.6e2a38",
+        "name": "InfuxDB-Intrusion-Data",
+        "measurement": "intrusionMeasurement",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 620,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "9ce35c9b.4536e",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "192.168.0.38",
+        "port": "1883",
+        "clientid": "ESP8266ClientVindi",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "85eca9c0.6e2a38",
+        "type": "influxdb",
+        "z": "",
+        "hostname": "192.168.0.38",
+        "port": "8086",
+        "protocol": "http",
+        "database": "IntrusionRTES",
+        "name": "InfuxDB-Intrusion-Data",
+        "usetls": false,
+        "tls": ""
+    }
+]
