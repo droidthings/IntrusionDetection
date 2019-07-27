@@ -26,9 +26,9 @@ On the left side we have menu kind of structure which is called Node palletes. W
 Node-RED console also provides an option to import/export the flows in JSON format so that it can be shared with everyone else in the development team.
 Click on the _hamburger_ icon on the top right corner and you can see the options to export/import the flow.
 
-The current flow can be found [flows].
+The current flow can be found [flows]. It can be imported onto Node-RED console for further evaluation.
 
-## Node pallette 
+## Node pallette examples
 
 ### Inject Node
 ![nr-3]
@@ -50,8 +50,22 @@ Join node helps to join all the data coming from various MQTT subscribers.
 Combine all all the sensor reading as key/value object so that we can insert the data directly to InfluxDB. The beauty of the InfluxDB is that it will automatically create columns according to the keys from the join node.
 ![nr-8]
 
+### InfluxDB Node
+There are many nodes which doesn't exist on the default Node pallette and InfluxDB node one among them. 
+Goto _Settings_ from _menu_ icon from top right, Select _pallette_, Click _install_  search for _node-red-contrib-influxdb_ and install them.
 
+![nr-9]
 
+#### configuration 
+After we run the _influxd.exe_ we can connect this node to our database. 
+
+![nr-10]
+![nr-11]
+
+Measurement (Table name) can be mentioned in the configuration pallette as well
+![nr-12]
+
+Debug console on the right side enables to see all the debug messages/payloads 
 
 ----
 
@@ -66,12 +80,14 @@ Combine all all the sensor reading as key/value object so that we can insert the
    [nr-3]: <https://user-images.githubusercontent.com/10976047/61995665-9d72cd00-b08b-11e9-8374-269a814816e4.PNG>
    [nr-4]: <https://user-images.githubusercontent.com/10976047/61995777-24747500-b08d-11e9-8aa2-79abf55a9642.PNG>
    [nr-5]: <https://user-images.githubusercontent.com/10976047/61995783-335b2780-b08d-11e9-8cad-8c1987b8dab6.PNG>
-   [nr-6]: <https://user-images.githubusercontent.com/10976047/61995818-803efe00-b08d-11e9-8565-57f9e57ded0e.PNG>
+   [nr-6]: <https://user-images.githubusercontent.com/10976047/61996321-5ab4f300-b093-11e9-82b9-58edbf451421.png>
    [nr-7]: <https://user-images.githubusercontent.com/10976047/61995874-3276c580-b08e-11e9-99a5-8e84b7d61cd2.PNG>
    [nr-8]: <https://user-images.githubusercontent.com/10976047/61995884-3e628780-b08e-11e9-8792-5335720c817b.PNG>
    [flows]: <https://github.com/ambinabhi/IntrusionDetection/blob/master/Code/Node-RED%20flows/flows.json>
-   [AngularJS]: <http://angularjs.org>
-   [Gulp]: <http://gulpjs.com>
+   [nr-9]: <https://user-images.githubusercontent.com/10976047/61996163-846d1a80-b091-11e9-9fb1-a9727958e478.PNG>
+   [nr-10]: <https://user-images.githubusercontent.com/10976047/61996185-cdbd6a00-b091-11e9-9b65-5cd7816b9885.PNG>
+   [nr-11]: <https://user-images.githubusercontent.com/10976047/61996185-cdbd6a00-b091-11e9-9b65-5cd7816b9885.PNG>
+   [nr-12]: <https://user-images.githubusercontent.com/10976047/61996213-25f46c00-b092-11e9-9b88-c5156c96eb3b.PNG>
 
    [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
    [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
