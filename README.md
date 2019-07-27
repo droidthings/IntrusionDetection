@@ -19,7 +19,7 @@ This Github page contains the documentation and codebase of the project "Intrusi
   * [3.2 Accelerometer and Gyroscope sensors](#32-accelerometer-and-gyroscope-sensors)
   * [3.3 Node-RED](#33-node-red) 
   * [3.4 MQTT](#34-mqtt)
-        * [3.4.1](#341-installation)
+    - [3.4.1 Installation](#341-installation)
   * [3.5 InfluxDB](#35-influxdb)
   * [3.6 Grafana](#36-grafana)
 - [4. Methodology](#4-methodology)
