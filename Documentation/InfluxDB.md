@@ -1,5 +1,10 @@
 # InfluxDb
-What is InfluxDb ?.
+
+## Installation
+
+Download InfluxDb from [SetUp].
+
+
 
 ----
 
@@ -7,7 +12,7 @@ What is InfluxDb ?.
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 
-   [ThingSpeak]: <https://thingspeak.com/>
+   [SetUp]: <https://www.influxdata.com/get-influxdb/>
    [Grafana]: https://grafana.com/
    [john gruber]: <http://daringfireball.net>
    [df1]: <http://daringfireball.net/projects/markdown/>
