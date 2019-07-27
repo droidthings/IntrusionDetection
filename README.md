@@ -23,7 +23,6 @@ This Github page contains the documentation and codebase of the project "Intrusi
   * [3.5 InfluxDB](#35-influxdb)
   * [3.6 Grafana](#36-grafana)
 - [4. Methodology](#4-methodology)
-- [5. Conclusion](#5-conclusion)
 
 ### 1. Introduction
 
@@ -106,6 +105,7 @@ Grafana is the leading open source software for time series analytics. The tool 
 Head to [doc-grafana](/Documentation/Grafana.md) for documentation and its implementation in the current project.
 
 
+### 4. Methodology
 ----
 
 
