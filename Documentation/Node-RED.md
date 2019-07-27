@@ -40,6 +40,7 @@ For eg - In the below figure _Payload_ is a string and its publishing the payloa
 ### MQTT Node
 ![nr-4] 
 MQTT node, confgure thr broker according to the broker parameters which will be running on your system.
+The subscriber on the Node-RED will waiting for all the published sensor readings for a particular topic name specified.
 
 ![nr-5]
 
