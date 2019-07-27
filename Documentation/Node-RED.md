@@ -26,7 +26,7 @@ On the left side we have menu kind of structure which is called Node palletes. W
 Node-RED console also provides an option to import/export the flows in JSON format so that it can be shared with everyone else in the development team.
 Click on the _hamburger_ icon on the top right corner and you can see the options to export/import the flow.
 
-The current flow can be found [here](Code/Node-RED flows/flows.JSON)
+The current flow can be found [here](./Code/Node-RED flows/)
 
 ## Node pallette 
 
