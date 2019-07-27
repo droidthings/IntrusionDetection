@@ -22,7 +22,6 @@ This Github page contains the documentation and codebase of the project "Intrusi
     - [3.4.1 Installation](#341-installation)
   * [3.5 InfluxDB](#35-influxdb)
   * [3.6 Grafana](#36-grafana)
-- [4. Methodology](#4-methodology)
 
 ### 1. Introduction
 
@@ -104,8 +103,6 @@ The complete installation guide, instruction sets and set up can be found [here]
 Grafana is the leading open source software for time series analytics. The tool for beautiful monitoring and metric analytics & dashboards for Graphite, InfluxDB & Prometheus & More [Grafana]. 
 Head to [doc-grafana](/Documentation/Grafana.md) for documentation and its implementation in the current project.
 
-
-### 4. Methodology
 ----
 
 
