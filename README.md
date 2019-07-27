@@ -98,7 +98,7 @@ Complete code can be found [here](/Code/ESP32-MPU6050/MQTTClient.ino). Once you 
 #### 3.5 InfluxDB
 InfluxDB is an open source time series database platform. This includes APIs for storing and querying data, processing it in the background for ETL or monitoring and alerting purposes, user dashboards, and visualizing and exploring the data and more. InfluxDB is very easy to start and scale time series data gives deep insights for unified metrics and events. It has diverted the industry focus from Relational database like SQL and has become vital for IoT based businesses to capture and analyze untapped data from virtual and physical assets to seize new opportunities. 
 
-The complete installation guide, instruction sets, different types of nodes used and the wiring mechanism can be found [here](/Documentation/InfluxDB.md) in detail.
+The complete installation guide, instruction sets and set up can be found [here](/Documentation/InfluxDB.md) in detail.
 
 
 
