@@ -31,6 +31,7 @@ In case if you want to have a custome time stamp, In the influx CLI, you can add
 ```
 > insert log value=1 1504225728000123456
 ```
+However in this project the data is being inserted from Node-RED nodes, refer [here](/Documentation/Node-RED.md).
 
 
 
