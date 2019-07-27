@@ -101,6 +101,10 @@ InfluxDB is an open source time series database platform. This includes APIs for
 The complete installation guide, instruction sets and set up can be found [here](/Documentation/InfluxDB.md) in detail.
 
 
+#### 3.6 Grafana
+Grafana is the leading open source software for time series analytics. The tool for beautiful monitoring and metric analytics & dashboards for Graphite, InfluxDB & Prometheus & More [Grafana]. 
+Head to [doc-grafana](/Documentation/Grafana.md) for documentation and its implementation in the current project.
+
 
 ----
 
