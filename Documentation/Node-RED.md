@@ -1,13 +1,15 @@
 # Node-RED
-What is Node-RED ?.
 
+----
+
+Node-RED is built on Node.js. Download Node.js from [downloads] according to your operating system.
 ----
 
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 
-   [ThingSpeak]: <https://thingspeak.com/>
+   [downloads]: <https://nodejs.org/en/>
    [Grafana]: https://grafana.com/
    [john gruber]: <http://daringfireball.net>
    [df1]: <http://daringfireball.net/projects/markdown/>
