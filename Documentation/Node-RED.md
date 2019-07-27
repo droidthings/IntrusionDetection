@@ -26,7 +26,7 @@ On the left side we have menu kind of structure which is called Node palletes. W
 Node-RED console also provides an option to import/export the flows in JSON format so that it can be shared with everyone else in the development team.
 Click on the _hamburger_ icon on the top right corner and you can see the options to export/import the flow.
 
-The current flow can be found  [here](./Code/Node-RED-flows/flows.json)
+The current flow can be found [flows].
 
 ## Node pallette 
 
@@ -69,7 +69,7 @@ Combine all all the sensor reading as key/value object so that we can insert the
    [nr-6]: <https://user-images.githubusercontent.com/10976047/61995818-803efe00-b08d-11e9-8565-57f9e57ded0e.PNG>
    [nr-7]: <https://user-images.githubusercontent.com/10976047/61995874-3276c580-b08e-11e9-99a5-8e84b7d61cd2.PNG>
    [nr-8]: <https://user-images.githubusercontent.com/10976047/61995884-3e628780-b08e-11e9-8792-5335720c817b.PNG>
-   [express]: <http://expressjs.com>
+   [flows]: <https://github.com/ambinabhi/IntrusionDetection/blob/master/Code/Node-RED%20flows/flows.json>
    [AngularJS]: <http://angularjs.org>
    [Gulp]: <http://gulpjs.com>
 
