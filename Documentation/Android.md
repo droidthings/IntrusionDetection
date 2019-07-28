@@ -86,14 +86,30 @@ public class NetworkInitiateSingleton extends NetworkInitiateFactory {
     ///making object of RestAdapter
     return retrofit.create(RtesAPI.class);
   }
-
 }
-
 ```
 
+## Implementation
 
-As this is REST API, on the Andorid application we need to create a thread which runs in background every minute. Since, The ESP32 sends the data to ThingSpeak on every minute cycle. 
+As this is a REST API, on the Andorid application we need to create a thread which runs in background every minute. Since, The ESP32 sends the data to ThingSpeak on every minute cycle. _CHANNEL_INTERVAL_ is set to 1 minute
 
+```
+ Runnable channelRunnable = new Runnable() {
+        @Override
+        public void run() {
+            ProgressUtils.showProgress(HomeActivity.this, "Loading Channel Data");
+            homePresenter.getChannelFeeds();
+            mHandler.postDelayed(channelRunnable,  Constants.CHANNEL_INTERVAL);
+        }
+ ```
+ 
+When the data is received for the first time its store on Android [SharedPreference] which is a local key-value storage interface.
+And then sent to display on UI. When the data data is received in next minute its compared with previously stored data, if the difference between  acceleration values is more than 500 units (X-axis) or 700 units (Y-axis) it is considered as intrusion and at this point there will be a spike on the ThingSpeak graph which shows sudden imbalance in the values and user is notified.
+
+![mob-1]
+
+Since the app is just a prototype only X and Y axis values are considered. The calculations are made on the state graph on ThingSpeak.
+Might not be 100% accurate in terms of detecting intrusion. Since the main focus of the project was the integration of MQTT and InfluxDB with Grafana the Android app is in its primary phase.
 
 
 ----
@@ -105,10 +121,9 @@ As this is REST API, on the Andorid application we need to create a thread which
    [Android]: <https://developer.android.com/studio>
    [ThingSpeak]: <https://thingspeak.com>
    [Retrofit]: <https://square.github.io/retrofit/>
-   [nr-2]: <https://user-images.githubusercontent.com/10976047/61995649-669cb700-b08b-11e9-902f-0f300da49fa5.PNG>
-   [nr-3]: <https://user-images.githubusercontent.com/10976047/61995665-9d72cd00-b08b-11e9-8374-269a814816e4.PNG>
-   [nr-4]: <https://user-images.githubusercontent.com/10976047/61995777-24747500-b08d-11e9-8aa2-79abf55a9642.PNG>
-   [nr-5]: <https://user-images.githubusercontent.com/10976047/61995783-335b2780-b08d-11e9-8cad-8c1987b8dab6.PNG>
+   [SharedPreference]: <https://developer.android.com/reference/android/content/SharedPreferences>
+   [mob-1]: <https://user-images.githubusercontent.com/10976047/62008036-02462a00-b155-11e9-98e4-8bc8e68b0f5a.PNG>
+
    [nr-6]: <https://user-images.githubusercontent.com/10976047/61996321-5ab4f300-b093-11e9-82b9-58edbf451421.png>
    [nr-7]: <https://user-images.githubusercontent.com/10976047/61995874-3276c580-b08e-11e9-99a5-8e84b7d61cd2.PNG>
    [nr-8]: <https://user-images.githubusercontent.com/10976047/61995884-3e628780-b08e-11e9-8792-5335720c817b.PNG>
