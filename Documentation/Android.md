@@ -20,9 +20,11 @@ https://api.thingspeak.com/channels/790451/feeds.json?api_key=0YOTCS4MZRKZBFDV&r
 ```
 
 Using Retrofit HTTP client for Android we can configure the the API in a singleton class so that api can be accessed from anywhere in the application.
+
 ```
 public static String BASE_URL = "https://api.thingspeak.com/channels/790451/";
 ```
+
 ```
 public interface RtesAPI {
     @GET("feeds.json?api_key=0YOTCS4MZRKZBFDV&results=1")
@@ -30,7 +32,9 @@ public interface RtesAPI {
 
 }
 ```
+
 _ChannelFeedData_ will have all the objects of the JSON data which its receiving from ThingSpaek network.
+
 ```
 {
     "channel": {
@@ -55,6 +59,8 @@ _ChannelFeedData_ will have all the objects of the JSON data which its receiving
     ]
 }
 ```
+
+Set-up the base Retrofit API necessary for the application
 
 ```
 public class NetworkInitiateSingleton extends NetworkInitiateFactory {
