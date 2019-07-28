@@ -52,7 +52,7 @@ Combine all all the sensor reading as key/value object so that we can insert the
 ![nr-8]
 
 Output from the Join node
-![nr-12]
+![nr-13]
 
 InfluxDB node will interpret this as _insert intrusionMeasurement, esp32/XAcc=-2572, esp32/YAcc= 120, esp32/ZAcc= -18524, esp32/XGyro= 626, esp32/YGyro= -15, esp32/ZGyro= -280 currentdefaultTimestamp_
 
@@ -94,6 +94,7 @@ Debug console on the right side enables to see all the debug messages/payloads
    [nr-10]: <https://user-images.githubusercontent.com/10976047/61996185-cdbd6a00-b091-11e9-9b65-5cd7816b9885.PNG>
    [nr-11]: <https://user-images.githubusercontent.com/10976047/61996185-cdbd6a00-b091-11e9-9b65-5cd7816b9885.PNG>
    [nr-12]: <https://user-images.githubusercontent.com/10976047/61996213-25f46c00-b092-11e9-9b88-c5156c96eb3b.PNG>
+   [nr-13]: <https://user-images.githubusercontent.com/10976047/62005208-14fa3800-b130-11e9-80e3-77e73a9c8ba2.PNG>
 
    [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
    [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
