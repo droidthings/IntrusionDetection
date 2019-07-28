@@ -74,7 +74,7 @@ After we run the _influxd.exe_ we can connect this node to our database.
 Measurement (Table name) can be mentioned in the configuration pallette as well
 ![nr-12]
 
-Debug console on the right side enables to see all the debug messages/payloads 
+Debug console on the right side enables to see all the debug messages/payloads
 
 ----
 
