@@ -54,7 +54,10 @@ Combine all all the sensor reading as key/value object so that we can insert the
 Output from the Join node
 ![nr-13]
 
-InfluxDB node will interpret this as _insert intrusionMeasurement, esp32/XAcc=-2572, esp32/YAcc= 120, esp32/ZAcc= -18524, esp32/XGyro= 626, esp32/YGyro= -15, esp32/ZGyro= -280 currentdefaultTimestamp_
+InfluxDB node will interpret this as
+```
+insert intrusionMeasurement, esp32/XAcc=-2572, esp32/YAcc= 120, esp32/ZAcc= -18524, esp32/XGyro= 626, esp32/YGyro= -15, esp32/ZGyro= -280 currentdefaultTimestamp
+```
 
 ### InfluxDB Node
 There are many nodes which doesn't exist on the default Node pallette and InfluxDB node one among them. 
