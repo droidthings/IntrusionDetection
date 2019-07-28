@@ -55,9 +55,11 @@ gyroscope data.
 
 The implementation and mechanisms involved in Granfa and influxDB are much more. It can be extended to various other application as related to IoT. Follow the below links for more better understanding via videos of the techilogies used in this project.
 
-[https://www.youtube.com/results?search_query=influxdb-grafana]
-[https://www.youtube.com/watch?v=DmIWgkawcw4&list=PLoVvAgF6geYMb029jpxqMuz5dRDtO0ydM]
-[https://www.youtube.com/watch?v=5JrT1DPlu0c&t=325s]
+https://www.youtube.com/results?search_query=influxdb-grafana
+
+https://www.youtube.com/watch?v=DmIWgkawcw4&list=PLoVvAgF6geYMb029jpxqMuz5dRDtO0ydM
+
+https://www.youtube.com/watch?v=5JrT1DPlu0c&t=325s
 
 ----
 
