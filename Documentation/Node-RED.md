@@ -51,6 +51,11 @@ Join node helps to join all the data coming from various MQTT subscribers.
 Combine all all the sensor reading as key/value object so that we can insert the data directly to InfluxDB. The beauty of the InfluxDB is that it will automatically create columns according to the keys from the join node.
 ![nr-8]
 
+Output from the Join node
+![nr-12]
+
+InfluxDB node will interpret this as _insert intrusionMeasurement, esp32/XAcc=-2572, esp32/YAcc= 120, esp32/ZAcc= -18524, esp32/XGyro= 626, esp32/YGyro= -15, esp32/ZGyro= -280 currentdefaultTimestamp_
+
 ### InfluxDB Node
 There are many nodes which doesn't exist on the default Node pallette and InfluxDB node one among them. 
 Goto _Settings_ from _menu_ icon from top right, Select _pallette_, Click _install_  search for _node-red-contrib-influxdb_ and install them.
