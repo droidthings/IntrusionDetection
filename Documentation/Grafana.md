@@ -26,7 +26,7 @@ admin_password = admin
 
 First-step on the grafana console is to add datasource for the dashboard.
 Under _configuration_ on left menu bar goto _Data Sources_, click on _Add data source_ and select _InfluxDB_
-![G-2] ![G-3]
+![G-2]
 
 
 
@@ -38,7 +38,7 @@ Under _configuration_ on left menu bar goto _Data Sources_, click on _Add data s
 
    [Grafana-Get]: <https://grafana.com/get>
    [G-1]: <https://user-images.githubusercontent.com/10976047/62005750-116aaf00-b138-11e9-9b6d-7bc7de31ff94.PNG>
-   [G-2]: <https://user-images.githubusercontent.com/10976047/62005798-d6b54680-b138-11e9-97d8-f2b4e915c20e.PNG>
+   [G-2]: <https://user-images.githubusercontent.com/10976047/62005834-43304580-b139-11e9-8c94-ac3bbb60699e.PNG>
    [G-3]: <https://user-images.githubusercontent.com/10976047/62005799-d917a080-b138-11e9-8412-15b223e3063b.PNG>
    [markdown-it]: <https://github.com/markdown-it/markdown-it>
    [Ace Editor]: <http://ace.ajax.org>
