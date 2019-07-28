@@ -2,6 +2,92 @@
 
 ## Installation
 
+Download the latest version of [Android] studio according to your preferred operating system. Install the latest Android SDK (API 29) once the Android studio is installed. 
+The current Android application targets
+```
+ minSdkVersion 19
+ targetSdkVersion 29
+```
+Hence it runs on devices with os from Android KitKat till Android Q.
+
+## Data source configuration
+As its explained in architecture of the application the data source for the Android application is [ThingSpeak] analytics portal.
+
+### Configuration
+The API exposed from ThingSpeak portal
+```
+https://api.thingspeak.com/channels/790451/feeds.json?api_key=0YOTCS4MZRKZBFDV&results=1
+```
+
+Using Retrofit HTTP client for Android we can configure the the API in a singleton class so that api can be accessed from anywhere in the application.
+```
+public static String BASE_URL = "https://api.thingspeak.com/channels/790451/";
+```
+```
+public interface RtesAPI {
+    @GET("feeds.json?api_key=0YOTCS4MZRKZBFDV&results=1")
+    Observable<ChannelFeedData> getChannelFeeds();
+
+}
+```
+_ChannelFeedData_ will have all the objects of the JSON data which its receiving from ThingSpaek network.
+```
+{
+    "channel": {
+        "id": 790451,
+        "name": "ESP32 Test channel",
+        "description": "Testing to connect ESP32",
+        "latitude": "0.0",
+        "longitude": "0.0",
+        "field1": "X",
+        "field2": "Y",
+        "created_at": "2019-05-29T09:51:24Z",
+        "updated_at": "2019-07-20T14:33:11Z",
+        "last_entry_id": 671
+    },
+    "feeds": [
+        {
+            "created_at": "2019-07-25T22:16:52Z",
+            "entry_id": 671,
+            "field1": "908",
+            "field2": "236"
+        }
+    ]
+}
+```
+
+```
+public class NetworkInitiateSingleton extends NetworkInitiateFactory {
+  private static NetworkInitiateSingleton ourInstance = new NetworkInitiateSingleton();
+
+  private NetworkInitiateSingleton() {
+  }
+
+  public static NetworkInitiateSingleton getInstance() {
+    return ourInstance;
+  }
+
+  public RtesAPI initiateOkHttp() {
+    OkHttpClient okHttpClient = new OkHttpClient();
+    okHttpClient.setConnectTimeout(20, TimeUnit.SECONDS);
+    okHttpClient.setReadTimeout(20, TimeUnit.SECONDS);
+    okHttpClient.setWriteTimeout(60, TimeUnit.SECONDS);
+    Retrofit retrofit = new Retrofit.Builder().baseUrl(ConstantsURL.BASE_URL)
+        .client(okHttpClient)
+        .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create())
+        .build();
+    ///making object of RestAdapter
+    return retrofit.create(RtesAPI.class);
+  }
+
+}
+
+```
+
+
+As this is REST API, on the Andorid application we need to create a thread which runs in background every minute. Since, The ESP32 sends the data to ThingSpeak on every minute cycle. 
+
 
 
 ----
@@ -10,9 +96,9 @@
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 
-   [downloads]: <https://nodejs.org/en/>
-   [nr-cli]: <https://user-images.githubusercontent.com/10976047/61995488-8d59ee00-b089-11e9-8b20-ece55d770dec.PNG>
-   [nr-1]: <https://user-images.githubusercontent.com/10976047/61995591-d3fc1800-b08a-11e9-94bc-eb71dd49ff68.png>
+   [Android]: <https://developer.android.com/studio>
+   [ThingSpeak]: <https://thingspeak.com>
+   [Retrofit]: <https://square.github.io/retrofit/>
    [nr-2]: <https://user-images.githubusercontent.com/10976047/61995649-669cb700-b08b-11e9-902f-0f300da49fa5.PNG>
    [nr-3]: <https://user-images.githubusercontent.com/10976047/61995665-9d72cd00-b08b-11e9-8374-269a814816e4.PNG>
    [nr-4]: <https://user-images.githubusercontent.com/10976047/61995777-24747500-b08d-11e9-8aa2-79abf55a9642.PNG>
