@@ -1,5 +1,5 @@
 #include <WiFi.h>
-#include <PubSubClient.h>
+#include <ThingSpeak.h>
 
 // I2Cdev and MPU6050 must be installed as libraries, or else the .cpp/.h files
 // for both classes must be in the include path of your project
@@ -22,39 +22,26 @@ MPU6050 accelgyro;
 int16_t ax, ay, az;
 int16_t gx, gy, gz;
 
-// Add your MQTT Broker IP address, for example with Mosquitto Broker:
-//const char* mqtt_server = "192.168.0.192";
-const char* mqtt_server = "local_IPv4_addr";
-
-
-WiFiClient espClient;
-PubSubClient client(espClient);
-long lastMsg = 0;
-char msg[50];
-int value = 0;
-
 // uncomment "OUTPUT_READABLE_ACCELGYRO" if you want to see a tab-separated
 // list of the accel X/Y/Z and then gyro X/Y/Z values in decimal. Easy to read,
 // not so easy to parse, and slow(er) over UART.
 #define OUTPUT_READABLE_ACCELGYRO
 
+String apiKey = "write_apikey";                  //  Enter your Write API key from ThingSpeak
 
-const char *ssid =  "WiFi_SSID";                                    // replace with your wifi ssid and wpa2 key
+const char *ssid =  "WiFi_SSID";                 // replace with your wifi ssid and password
 const char *pass =  "WiFi_Password";
+const char* server = "api.thingspeak.com";
 
+long channelId = 790451;//ID for particular channel in Thingspeak
+WiFiClient client;
 
-//Setup Wifi, MPU6050, Start 
 void setup() {
-    Serial.begin(115200);
-    delay(10);
-    
     setup_wifi();
-    client.setServer(mqtt_server, 1883);
-  
 	// join I2C bus (I2Cdev library doesn't do this automatically)
 	Wire.begin();
-    
-    // initialize serial communication 
+
+    // initialize serial communication
     Serial.begin(115200);
 
     // initialize device
@@ -66,15 +53,16 @@ void setup() {
     Serial.println("Testing device connections...");
     Serial.println(accelgyro.testConnection() ? "MPU6050 connection successful" : "MPU6050 connection failed");
     delay(500);
-    //Set accel/gyro offsets
-	set_sensor_offset();
-    
+    // use the code below to change accel/gyro offset values
+   
+    set_sensor_offset();
  
 }
 
+//Set offsets as per requirement
 void set_sensor_offset() {
-  // use the code below to change accel/gyro offset values
-  Serial.println("Updating internal sensor offsets...");
+	// use the code below to change accel/gyro offset values
+	Serial.println("Updating internal sensor offsets...");
     // -76  -2359 1688  0 0 0
     Serial.print(accelgyro.getXAccelOffset()); Serial.print("\t"); // -76
     Serial.print(accelgyro.getYAccelOffset()); Serial.print("\t"); // -2359
@@ -95,6 +83,7 @@ void set_sensor_offset() {
     Serial.print("\n");
 }
 
+//Setup wifi connection
 void setup_wifi() {
     Serial.println("Connecting to ");
     Serial.println(ssid);
@@ -108,49 +97,26 @@ void setup_wifi() {
     Serial.println("WiFi connected");
 }
 
-void reconnect() {
-  // Loop until we're reconnected
-  while (!client.connected()) {
-    Serial.print("Attempting MQTT connection...");
-    // Attempt to connect
-    if (client.connect("ESP8266ClientVindi")) {
-      Serial.println("connected");
-    } else {
-      Serial.print("failed, rc=");
-      Serial.print(client.state());
-      Serial.println(" try again in 5 seconds");
-      // Wait 5 seconds before retrying
-      delay(5000);
-    }
-  }
-}
-
 void loop() {
-  if (!client.connected()) {
-    reconnect();
-  }
-  client.loop();
-  accelgyro.getAcceleration(&ax, &ay, &az);
-  
-  long now = millis();
-  if (now - lastMsg > 10000) {
-    lastMsg = now;
-    readData();
+
+  if (client.connect(server,80)) {                                 //   "184.106.153.149" or api.thingspeak.com  
     
-    client.publish("esp32/XAcc", String(ax).c_str(), true);
-    client.publish("esp32/YAcc", String(ay).c_str(), true);
-    client.publish("esp32/ZAcc", String(az).c_str(), true);
-    client.publish("esp32/XGyro", String(gx).c_str(), true);
-    client.publish("esp32/YGyro", String(gy).c_str(), true);
-    client.publish("esp32/ZGyro", String(gz).c_str(), true);
-    
+    String postStr = readAccelData();
+    delay(500);
+    postData(postStr);
+    delay(500);
+
   }
+    client.stop();
+    Serial.println("Waiting...");
+    delay(10000);
 }
 
 
-void readData(){
+
+String readAccelData(){
     
-  // read raw accel/gyro measurements from device
+	// read raw accel/gyro measurements from device
     accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
 
     // these methods (and a few others) are also available
@@ -168,5 +134,30 @@ void readData(){
         Serial.println(gz);
     #endif
     delay(500);
+	
+	//Create a string with values to be posted to particular fields in ThingSpeak
+	String postStr = apiKey;
+    postStr +="&field1=";
+    postStr += String(ax);
+    postStr += "&field2=";
+    postStr += String(ay);
+
+    return postStr;
   
 }
+
+
+void postData(String postStr) {
+  
+  client.print("POST /update HTTP/1.1\n");
+  client.print("Host: api.thingspeak.com\n");
+  client.print("Connection: close\n");
+  client.print("X-THINGSPEAKAPIKEY: "+apiKey+"\n");
+  client.print("Content-Type: application/x-www-form-urlencoded\n");
+  client.print("Content-Length: ");
+  client.print(postStr.length());
+  client.print("\n\n");
+  client.print(postStr); 
+  delay(500);
+  Serial.print("Posted to Thingspeak");
+} 
