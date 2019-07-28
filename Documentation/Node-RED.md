@@ -20,7 +20,7 @@ Open the link  _http://127.0.0.1:1880/_ since that's the default port link for N
 
 On the left side we have menu kind of structure which is called Node palletes. We can drag and configure them according to the requirement.
 
-### The current architecture flow
+## The current architecture flow
 ![nr-6]
 
 Node-RED console also provides an option to import/export the flows in JSON format so that it can be shared with everyone else in the development team.
