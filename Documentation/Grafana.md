@@ -6,14 +6,14 @@ Download the grafana server-client executables from [Grafana-Get]
 
 Unzip the package, navigate to _bin_ folder launch _grafana-server.exe_ to launch grafana server.
 
-By Default Grafana runs on posr **3000**, it can be modified in file _/grafana-6.2.5/conf/defaults.ini_ file. 
+By Default Grafana runs on port **3000**, it can be modified in file _/grafana-6.2.5/conf/defaults.ini_ file. 
 ```
 # The http port to use
 http_port = 9000
 ```
 In this project it has been modified to **9000**
 
-User credentials also are by default to login to dashboard.
+User credentials also are default values to login to dashboard.
 ```
 [security]
 # default admin user, created on startup
@@ -33,17 +33,17 @@ Under _configuration_ on left menu bar goto _Data Sources_, click on _Add data s
 ## Dashboard pannel
 
 ### Choosing the suitable visualisation
-Click on _Add_ icon or select _Add new panel_ from the top bar, select _Choose Visualisation_. Wide varieties on graphical representations can be choosen 
+Click on _Add_ icon or select _Add new panel_ from the top bar, select _Choose Visualisation_. Wide varieties in graphical representations can be choosen 
 ![G-3]
 
 ### Querying the data from source
-From the _Query_ panel select the data source from the dropdown, select the mesurement/table and can start selecting the field values necessary to represent on the chossen graph.  
+From the _Query_ panel select the data source from the dropdown, select the measurement/table and can start selecting the field values necessary to represent on the chosen graph.  
 ![G-4]
 
-Grafana also provides an option to inspect the queries where we can see the flow of data from out data source
+Grafana also provides an option to inspect the queries where we can see the flow of data from our data source
 ![G-5]
 
-Grafana comes with most advanced setting for any graphical representations available. It allows to changes the mode of the graph as bars, points and lines. Variour color spectrums are available to mark the values. User can modify the tooltips and many more. 
+Grafana comes with most advanced setting for any graphical representations available. It allows changes to mode of the graph as bars, points and lines. Various color spectrums are available to mark the values. User can modify the tooltips and many more. 
 Threshold setting is one of the settings included, which allows user to set different threshold limits and set the color gradient accordingly.
 
 ![G-6]
@@ -53,7 +53,7 @@ gyroscope data.
 
 ![G-7]
 
-The implementation and mechanisms involved in Granfa and influxDB are much more. It can be extended to various other application as related to IoT. Follow the below links for more better understanding via videos of the techilogies used in this project.
+The implementation and mechanisms involved in Granfa and influxDB are much more. It can be extended to various other application as related to IoT. Follow the below links to get a better understanding via videos of the technologies used in this project.
 
 https://www.youtube.com/results?search_query=influxdb-grafana
 
