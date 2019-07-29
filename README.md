@@ -39,7 +39,7 @@ The first approach via MQTT broker has been the primary focus of this project. H
 
 
 #### 3.1 ESP32
-ESP32 is a low power system on chip microcontroller with integrated Wi-Fi and dual bluetooth modes. Its low power design is suitable for IoT application. For this implementation we have chosen, WIFI Lora 32 provided by Heltec which has a ESP32 microprocessor with integrated WiFi, LoRa and Bluetooth connectivity modules. This board has been chosen for its ability to communicate over Wi-Fi, making it easier to send data to either [ThingSpeak] or utilize [MQTT] broker to publish data to chosen topics. It also supports Arduino Development environment, making it easier to program codes with Arduino IDE.
+ESP32 is a low power system on chip microcontroller with integrated Wi-Fi and dual bluetooth modes. Its low power design is suitable for IoT application. For this implementation we have chosen, WIFI Lora 32 provided by Heltec which has a ESP32 microprocessor with integrated WiFi, LoRa and Bluetooth connectivity modules. This board has been chosen for its ability to communicate over Wi-Fi, making it easier to send data to either [ThingSpeak] or utilize [MQTT] broker to publish data to chosen topics. It also supports Arduino Development environment, making it easier to program codes with Arduino IDE. The steps to setup ESP32 with Arduino IDE can be found [here](https://github.com/v2h/ESP32_WiFi_Demo)
 
 #### 3.2 Accelerometer and Gyroscope sensors
 MPU6050 is used for reading accelerometer and gyroscope readings. It provides a 3-axis gyroscope and a 3-axis accelerometer readings. The digital output is via I²C protocol. To establish communication between this sensor and the board we have to use the [Wire](https://www.arduino.cc/en/reference/wire) library provided by Arduino. Below code is used to read data from the sensor.
@@ -58,6 +58,14 @@ The connections between the Heltec board and MPU6050 is as below:
 |GND|GND|
 |SCL|22|
 |SDA|21|
+
+Install the following libraries for the implementation:
+- MPU6050 - Library to use MPU6050 functionalities in IDE
+- PubSubClient - For MQTT connections
+- ThingSpeak - For connecting to ThingSpeak
+- WireData - To simplify data sending over I²C 
+  
+In Arduino IDE navigate to Tools -> Manage Libraries... and search for the following libraries and install them.
 
 #### 3.3 Node-RED
 
