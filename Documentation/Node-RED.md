@@ -14,11 +14,11 @@ From the cli run,
 ```
 ![nr-cli]
 
-Open the link  _http://127.0.0.1:1880/_ since that's the default port link for Node-RED portal.
+Open the link  _http://127.0.0.1:1880/_ the default port link for Node-RED portal.
 
 ![nr-1]
 
-On the left side we have menu kind of structure which is called Node palletes. We can drag and configure them according to the requirement.
+On the left side we have menu which is called Node palletes. We can drag components (nodes) and configure them according to the requirement.
 
 ## The current architecture flow
 ![nr-6]
@@ -26,21 +26,21 @@ On the left side we have menu kind of structure which is called Node palletes. W
 Node-RED console also provides an option to import/export the flows in JSON format so that it can be shared with everyone else in the development team.
 Click on the _hamburger_ icon on the top right corner and you can see the options to export/import the flow.
 
-The current flow can be found [flows]. It can be imported onto Node-RED console for further evaluation.
+The current flow for this implementation can be found [flows]. It can be imported into Node-RED console for further evaluation.
 
 ## Node pallette examples
 
 ### Inject Node
 ![nr-3]
 Inject node helps to input a certain value which can be number, string, object. 
-For eg - In the below figure _Payload_ is a string and its publishing the payload via _sensorX_ topic through the MQTT broker.
+For eg - In the below figure _Payload_ is a string and it is publishing the payload via _sensorX_ topic through the MQTT broker.
 
 ![nr-2]
 
 ### MQTT Node
 ![nr-4] 
-MQTT node, confgure thr broker according to the broker parameters which will be running on your system.
-The subscriber on the Node-RED will waiting for all the published sensor readings for a particular topic name specified.
+MQTT node, configure the broker according to the broker parameters which will be running on your system.
+The subscriber on the Node-RED will be waiting for all the published sensor readings for a particular topic name specified.
 
 ![nr-5]
 
@@ -48,7 +48,7 @@ The subscriber on the Node-RED will waiting for all the published sensor reading
 ![nr-7]
 Join node helps to join all the data coming from various MQTT subscribers.
 
-Combine all all the sensor reading as key/value object so that we can insert the data directly to InfluxDB. The beauty of the InfluxDB is that it will automatically create columns according to the keys from the join node.
+Combine all the sensor reading as key/value object so that we can insert the data directly to InfluxDB. The beauty of the InfluxDB is that it will automatically create columns according to the keys from the join node.
 ![nr-8]
 
 Output from the Join node
@@ -60,7 +60,7 @@ insert intrusionMeasurement, esp32/XAcc=-2572, esp32/YAcc= 120, esp32/ZAcc= -185
 ```
 
 ### InfluxDB Node
-There are many nodes which doesn't exist on the default Node pallette and InfluxDB node one among them. 
+There are many nodes which don't exist on the default Node pallette and InfluxDB node is one among them. 
 Goto _Settings_ from _menu_ icon from top right, Select _pallette_, Click _install_  search for _node-red-contrib-influxdb_ and install them.
 
 ![nr-9]
