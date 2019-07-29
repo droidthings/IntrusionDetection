@@ -8,10 +8,10 @@ The current Android application targets
  minSdkVersion 19
  targetSdkVersion 29
 ```
-Hence it runs on devices with os from Android KitKat till Android Q.
+It runs on devices with os from Android KitKat till Android Q.
 
 ## Data source configuration
-As its explained in architecture of the application the data source for the Android application is [ThingSpeak] analytics portal.
+As it is explained in architecture of the application the data source for the Android application is [ThingSpeak] analytics portal.
 
 ### Configuration
 The API exposed from ThingSpeak portal
@@ -19,7 +19,7 @@ The API exposed from ThingSpeak portal
 https://api.thingspeak.com/channels/790451/feeds.json?api_key=0YOTCS4MZRKZBFDV&results=1
 ```
 
-Using Retrofit HTTP client for Android we can configure the the API in a singleton class so that api can be accessed from anywhere in the application.
+Using Retrofit HTTP client for Android we can configure the API in a singleton class so that api can be accessed from anywhere in the application.
 
 ```
 public static String BASE_URL = "https://api.thingspeak.com/channels/790451/";
@@ -33,7 +33,7 @@ public interface RtesAPI {
 }
 ```
 
-_ChannelFeedData_ will have all the objects of the JSON data which its receiving from ThingSpaek network.
+_ChannelFeedData_ will have all the objects of the JSON data which it is receiving from ThingSpeak network.
 
 ```
 {
@@ -91,7 +91,7 @@ public class NetworkInitiateSingleton extends NetworkInitiateFactory {
 
 ## Implementation
 
-As this is a REST API, on the Andorid application we need to create a thread which runs in background every minute. Since, The ESP32 sends the data to ThingSpeak on every minute cycle. _CHANNEL_INTERVAL_ is set to 1 minute
+As this is a REST API, on the Andorid application we need to create a thread which runs in background every minute. Since, The ESP32 sends the data to ThingSpeak on per minute cycle. _CHANNEL_INTERVAL_ is set to 1 minute
 
 ```
  Runnable channelRunnable = new Runnable() {
@@ -103,13 +103,13 @@ As this is a REST API, on the Andorid application we need to create a thread whi
         }
  ```
  
-When the data is received for the first time its store on Android [SharedPreference] which is a local key-value storage interface.
-And then sent to display on UI. When the data data is received in next minute its compared with previously stored data, if the difference between  acceleration values is more than 500 units (X-axis) or 700 units (Y-axis) it is considered as intrusion and at this point there will be a spike on the ThingSpeak graph which shows sudden imbalance in the values and user is notified.
+When the data is received for the first time it is stored on Android [SharedPreference] which is a local key-value storage interface.
+And then sent to display on UI. When the data is received in next minute it is compared with previously stored data, if the difference between  acceleration values is more than 500 units (X-axis) or 700 units (Y-axis) it is considered as an intrusion and at this point there will be a spike on the ThingSpeak graph which shows sudden imbalance in the values and user is notified.
 
 ![mob-1]
 
 Since the app is just a prototype only X and Y axis values are considered. The calculations are made on the state graph on ThingSpeak.
-Might not be 100% accurate in terms of detecting intrusion. Since the main focus of the project was the integration of MQTT and InfluxDB with Grafana the Android app is in its primary phase.
+Might not be 100% accurate in terms of detecting intrusion as values need to be studied to arrive at the difference between consecutive values to be considered an intrusion.
 
 
 ----
