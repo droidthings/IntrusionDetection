@@ -1,5 +1,5 @@
 # InfluxDb
-The setup and query structure invlolved here is little bit different compared to that of a Relational database management system (RDBMS). 
+The setup and query structure invlolved here is little different compared to that of a Relational database management system (RDBMS). 
 
 ## Installation
 
@@ -22,7 +22,7 @@ Sample InfluxDB queries.
 ```
 >USE IntrusionRTESDB
 ```
-In order to insert to data to a table however its a little different procedure 
+In order to insert to data to a table however it is a different procedure 
 ```
 >INSERT intrusionMeasurements, esp32/XAcc=10 esp32/XGyro=12 esp32/YAcc=560 esp32/YGyro=456 esp32/ZAcc=678 esp32/ZGyro=33
 ```
@@ -31,7 +31,7 @@ In case if you want to have a custome time stamp, In the influx CLI, you can add
 ```
 > insert log value=1 1504225728000123456
 ```
-However in this project the data is being inserted from Node-RED nodes, refer [here](/Documentation/Node-RED.md).
+In this project the data is being inserted from Node-RED nodes, refer [here](/Documentation/Node-RED.md).
 
 
 
